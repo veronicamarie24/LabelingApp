@@ -32,9 +32,7 @@ function initDraw(canvas) {
         if (element !== null) {
             element = null;
             canvas.style.cursor = "default";
-            console.log("finsihed.");
         } else {
-            console.log("begun.");
             mouse.startX = mouse.x;
             mouse.startY = mouse.y;
             element = document.createElement('div');

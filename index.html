@@ -4,33 +4,34 @@
 <meta charset="utf-8">
 <title>Image Labeling</title>
 <link href="style.css" rel="stylesheet" type="text/css">
-<script src="script.js"></script> 
+<script src="script.js"></script>
 </head>
 
 <body>
-<h1>Image Labeling App</h1>
-	1. Use the drop down menu to pick what you are labeling.<br />
-	2. Click on the image to draw a square around the object.<br />
-	3. Labels will save automatically. <br /><br />
-	Use the Clear Labels button to clear <b>all</b> labels on your current image.
-		
-	<br /><br >
-<div id="dropdown">
-		<select>
-			<option value="roulette">Roulette</option>
-			<option value="dice1">Dice 1</option>
-			<option value="dice2">Dice 2</option>
-			<option value="dice3">Dice 3</option>
-		</select>
+	<div id="dropdown">
+			<select>
+				<option value="roulette">Roulette</option>
+				<option value="dice1">Dice 1</option>
+				<option value="dice2">Dice 2</option>
+				<option value="dice3">Dice 3</option>
+			</select>
+		</div>
+		<br /><br />
+	<div id="canvas">
+	  <script>
+		  initDraw(document.getElementById('canvas'));
+	  </script>
 	</div>
-	<br /><br />
-<div id="canvas">
-  <script>
-        	initDraw(document.getElementById('canvas'));
-    	</script>
-</div>
-<div id="clear"></div>
+	<div id="clear" onclick="clear()"></div>
 	<div id="previous"></div>
 	<div id="next"></div>
+	
+	<script>
+		function clear() {
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+	</script>
 </body>
 </html>
