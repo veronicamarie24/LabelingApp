@@ -8,30 +8,23 @@
 </head>
 
 <body>
-	<div id="dropdown">
-			<select>
-				<option value="roulette">Roulette</option>
-				<option value="dice1">Dice 1</option>
-				<option value="dice2">Dice 2</option>
-				<option value="dice3">Dice 3</option>
-			</select>
-		</div>
-		<br /><br />
+	<div id="menu" onchange="changeColor()">
+		<select id="dropdown">
+			<option value="one">Roulette</option>
+			<option value="two">Dice 1</option>
+			<option value="three">Dice 2</option>
+			<option value="four">Dice 3</option>
+			<option value="five">Dice 3</option>
+			<option value="six">Dice 3</option>
+		</select>
+	</div>
+	<br /><br />
 	<div id="canvas">
 	  <script>
 		  initDraw(document.getElementById('canvas'));
 	  </script>
 	</div>
-	<div id="clear" onClick="clearLabels()">
-		<script>
-			function clearLabels() {
-				var canv = document.getElementById('canvas');
-				while (canv.firstChild) {
-    				canv.removeChild(canv.firstChild);
-				}
-			}
-		</script>
-	</div>
+	<div id="clear" onClick="clearLabels()"></div>
 	<div id="previous"></div>
 	<div id="next"></div>
 </body>
