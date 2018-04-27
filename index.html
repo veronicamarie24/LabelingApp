@@ -22,16 +22,17 @@
 		  initDraw(document.getElementById('canvas'));
 	  </script>
 	</div>
-	<div id="clear" onclick="clear()"></div>
+	<div id="clear" onClick="clearLabels()">
+		<script>
+			function clearLabels() {
+				var canv = document.getElementById('canvas');
+				while (canv.firstChild) {
+    				canv.removeChild(canv.firstChild);
+				}
+			}
+		</script>
+	</div>
 	<div id="previous"></div>
 	<div id="next"></div>
-	
-	<script>
-		function clear() {
-			var canvas = document.getElementById('canvas');
-			var ctx = canvas.getContext('2d');
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-		}
-	</script>
 </body>
 </html>
